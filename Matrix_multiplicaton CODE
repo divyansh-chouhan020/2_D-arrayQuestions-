@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std ;
+int main()
+{
+    int r1, c1,r2,c2;
+    cout <<"enter r1 , c1 ,r2 ,c2 : ";
+    cin >>r1>>c1>>r2>>c2;
+    int A[r1][c1]={0};
+    int B[r2][c2]={0};
+    int res[r2][c1]={0};
+    //taking input from the users 
+    cout <<"enter element of A:"<<"\n";
+    for(int i =0;i<r1;i++)
+    {
+        for (int j =0;j<c1;j++)
+        {
+            cin >>A[i][j];
+        }
+
+    }
+    cout <<"enter element of B :"<<"\n";
+     for(int i =0;i<r1;i++)
+    {
+        for (int j =0;j<c1;j++)
+        {
+            cin >>B[i][j];
+        }
+
+    }
+
+    //code for matrix multiplication 
+    if (c1==r2){
+     for(int i =0;i<r1;i++)
+    {
+        for (int j =0;j<c2;j++)
+        {
+            int sum =0;
+            for (int k =0 ;k<c1;k++)
+            {
+                sum =sum +A[i][k] *B[k][j];
+
+            }
+              res[i][j]=sum;
+        }
+
+    }
+    }
+    else{
+        cout <<"cant exist :";
+    }
+      for(int i =0;i<r1;i++)
+    {
+        for (int j =0;j<c2;j++)
+        {
+            cout <<res[i][j]<<" ";
+        }
+        cout <<endl;
+
+    }
+    
+}
